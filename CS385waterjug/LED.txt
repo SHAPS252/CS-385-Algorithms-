@@ -1,0 +1,30 @@
+
+#define __SFR_OFFSET 0
+
+
+#include "avr/io.h"
+#include <avr/sfr_defs.h>
+#include <avr/portpins.h>
+#include <avr/common.h>
+#include <avr/version.h>
+#include <avr/interrupt.h>
+
+.text
+.global setup
+.global loop
+
+setup:
+
+
+setup:  
+  ldi r16,0b11111111  
+  ldi r17, 0b00000000
+  ldi r18,0b0100000 
+
+   out DDRB, r16  
+  
+  
+loop:  
+  out PORTB, r18   
+
+ret 
